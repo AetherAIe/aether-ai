@@ -37,8 +37,8 @@ export default function Home() {
               Services
             </Link>
 
-            <Link href="/product/warzone-ai">
-              Products
+            <Link href="/boosting">
+              Boosting
             </Link>
 
           </div>
@@ -85,6 +85,13 @@ export default function Home() {
               ENTER STORE
             </Link>
 
+            <Link
+              href="/boosting"
+              className="px-10 py-4 rounded-2xl border border-cyan-400 hover:bg-cyan-400/10 transition-all duration-300"
+            >
+              BOOSTING
+            </Link>
+
             <a
               href="https://discord.gg/C7rKt52EFC"
               target="_blank"
@@ -111,17 +118,24 @@ export default function Home() {
 
           {[
             {
-              title: "WARZONE AI",
+              title: "WARZONE & BO7 AI",
               image:
                 "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop",
               link: "/product/warzone-ai",
             },
 
             {
+              title: "FORTNITE AI",
+              image:
+                "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop",
+              link: "/product/fortnite-ai",
+            },
+
+            {
               title: "BOOSTING SERVICE",
               image:
                 "https://images.unsplash.com/photo-1548686304-89d188a80029?q=80&w=1200&auto=format&fit=crop",
-              link: "/services",
+              link: "/boosting",
             },
           ].map((item) => (
             <motion.div
