@@ -6,29 +6,25 @@ const boostingPlans = [
   {
     title: "BRONZE → DIAMOND",
     price: "$30",
-    image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/bronze-diamond.png",
   },
 
   {
     title: "DIAMOND → CRIM",
     price: "$40",
-    image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/diamond-crim.png",
   },
 
   {
     title: "CRIM → IRI",
     price: "$70",
-    image:
-      "https://images.unsplash.com/photo-1548686304-89d188a80029?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/crim-iri.png",
   },
 
   {
     title: "BRONZE → IRI",
     price: "$100",
-    image:
-      "https://images.unsplash.com/photo-1547394765-185e1e68f34e?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/bronze-iri.png",
   },
 ];
 
@@ -54,8 +50,7 @@ export default function BoostingPage() {
           </h1>
 
           <p className="mt-6 text-zinc-400 text-xl max-w-3xl mx-auto">
-            Professional ranked boosting with high-level players,
-            fast delivery and live support.
+            Professional ranked boosting by high-level players with instant delivery.
           </p>
 
         </div>
@@ -65,15 +60,15 @@ export default function BoostingPage() {
 
           {boostingPlans.map((plan) => (
             <motion.div
-              whileHover={{ scale: 1.04 }}
+              whileHover={{ scale: 1.03 }}
               key={plan.title}
-              className="w-[340px] bg-zinc-900/80 border border-white/10 rounded-[36px] overflow-hidden backdrop-blur-xl transition-all duration-300 shadow-[0_0_35px_rgba(168,85,247,0.15)] hover:shadow-[0_0_50px_rgba(34,211,238,0.25)]"
+              className="w-[340px] bg-zinc-900/80 border border-white/10 rounded-[36px] overflow-hidden backdrop-blur-xl transition-all duration-300 shadow-[0_0_35px_rgba(168,85,247,0.15)] hover:shadow-[0_0_55px_rgba(34,211,238,0.25)]"
             >
 
               <img
                 src={plan.image}
                 alt={plan.title}
-                className="w-full h-[240px] object-cover"
+                className="w-full h-[220px] object-cover"
               />
 
               <div className="p-8">
@@ -84,6 +79,23 @@ export default function BoostingPage() {
 
                 <div className="mt-6 text-6xl font-black">
                   {plan.price}
+                </div>
+
+                {/* STATUS */}
+                <div className="flex items-center gap-3 mt-6">
+
+                  <div className="relative flex items-center justify-center">
+
+                    <div className="absolute w-4 h-4 rounded-full bg-green-500 animate-ping" />
+
+                    <div className="w-4 h-4 rounded-full bg-green-500 relative z-10" />
+
+                  </div>
+
+                  <span className="text-green-400 font-bold tracking-wider">
+                    LIVE BOOSTING
+                  </span>
+
                 </div>
 
                 <ul className="mt-8 space-y-4 text-zinc-300 text-lg">
