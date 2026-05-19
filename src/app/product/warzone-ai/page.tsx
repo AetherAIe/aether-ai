@@ -61,7 +61,7 @@ export default function WarzoneAIPage() {
 
               <img
                 src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600&auto=format&fit=crop"
-                alt="Warzone AI"
+                alt="Warzone & BO7 AI"
                 className="w-full h-[500px] object-cover"
               />
 
@@ -97,7 +97,7 @@ export default function WarzoneAIPage() {
           >
 
             <h1 className="text-6xl font-black bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
-              WARZONE AI
+              WARZONE & BO7 AI
             </h1>
 
             <div className="flex flex-wrap gap-4 mt-8">
