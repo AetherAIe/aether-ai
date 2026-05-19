@@ -2,6 +2,41 @@
 
 import { motion } from "framer-motion";
 
+const shopItems = [
+  {
+    title: "AI TRACKING",
+    price: "$39",
+    features: [
+      "Undetected",
+      "Humanized Aim",
+      "Controller Support",
+      "24/7 Support",
+    ],
+  },
+
+  {
+    title: "MP BOOSTING",
+    price: "$49",
+    features: [
+      "Rank Push",
+      "Top Players",
+      "Fast Delivery",
+      "Live Updates",
+    ],
+  },
+
+  {
+    title: "WZ BOOSTING",
+    price: "$69",
+    features: [
+      "SR Boost",
+      "Professional Squad",
+      "Priority Queue",
+      "Instant Support",
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen text-white overflow-hidden cyber-grid">
@@ -81,45 +116,6 @@ export default function Home() {
 
       </section>
 
-      {/* SERVICES */}
-      <section
-        id="services"
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-10 pb-24 max-w-7xl mx-auto"
-      >
-
-        {[
-          [
-            "AI Tracking",
-            "Humanized AI aiming and controller enhancement technology.",
-          ],
-          [
-            "MP Ranked Boosting",
-            "Professional ranked boosting with experienced players.",
-          ],
-          [
-            "WZ Ranked Boosting",
-            "High-level Warzone ranked services and SR pushing.",
-          ],
-        ].map(([title, desc]) => (
-          <motion.div
-            whileHover={{ scale: 1.04 }}
-            key={title}
-            className="bg-zinc-900/70 border border-white/10 p-8 rounded-3xl card-glow transition-all backdrop-blur-xl"
-          >
-
-            <h2 className="text-3xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              {title}
-            </h2>
-
-            <p className="text-zinc-400 mt-5 leading-relaxed">
-              {desc}
-            </p>
-
-          </motion.div>
-        ))}
-
-      </section>
-
       {/* SHOP */}
       <section
         id="shop"
@@ -132,43 +128,10 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-          {[
-            [
-              "AI TRACKING",
-              "$39",
-              [
-                "Undetected",
-                "Humanized Aim",
-                "Controller Support",
-                "24/7 Support",
-              ],
-            ],
-
-            [
-              "MP BOOSTING",
-              "$49",
-              [
-                "Rank Push",
-                "Top Players",
-                "Fast Delivery",
-                "Live Updates",
-              ],
-            ],
-
-            [
-              "WZ BOOSTING",
-              "$69",
-              [
-                "SR Boost",
-                "Professional Squad",
-                "Priority Queue",
-                "Instant Support",
-              ],
-            ],
-          ].map(([title, price, features]) => (
+          {shopItems.map((item) => (
             <motion.div
               whileHover={{ scale: 1.05 }}
-              key={title}
+              key={item.title}
               className="relative bg-zinc-900/70 border border-white/10 rounded-[32px] p-10 backdrop-blur-xl overflow-hidden card-glow transition-all"
             >
 
@@ -177,19 +140,21 @@ export default function Home() {
               <div className="relative z-10">
 
                 <h3 className="text-3xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  {title}
+                  {item.title}
                 </h3>
 
                 <div className="mt-6 text-6xl font-black">
-                  {price}
+                  {item.price}
                 </div>
 
                 <ul className="mt-8 space-y-4 text-zinc-300">
-                  {(features as string[]).map((feature) => (
+
+                  {item.features.map((feature) => (
                     <li key={feature}>
                       ✓ {feature}
                     </li>
                   ))}
+
                 </ul>
 
                 <a
@@ -204,41 +169,6 @@ export default function Home() {
               </div>
 
             </motion.div>
-          ))}
-
-        </div>
-
-      </section>
-
-      {/* REVIEWS */}
-      <section
-        id="reviews"
-        className="max-w-7xl mx-auto px-6 md:px-10 pb-40"
-      >
-
-        <h2 className="text-5xl font-black text-center mb-16 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-          Trusted By Players
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          {[
-            ["Ghosty", "Best service I've ever used."],
-            ["Venom", "Fast and very professional."],
-            ["Shadow", "Amazing support and setup help."],
-          ].map(([name, review]) => (
-            <div
-              key={name}
-              className="bg-zinc-900/70 border border-white/10 rounded-3xl p-8 backdrop-blur-xl card-glow transition-all"
-            >
-              <p className="text-zinc-300 leading-relaxed">
-                "{review}"
-              </p>
-
-              <p className="mt-6 text-cyan-400 font-bold">
-                @{name}
-              </p>
-            </div>
           ))}
 
         </div>
