@@ -64,7 +64,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://discord.gg/"
+              href="https://discord.gg/Qj6w6wbGvV"
               className="px-8 py-4 rounded-2xl border border-zinc-700 hover:border-cyan-400 hover:bg-white/5 transition-all"
             >
               Join Discord
