@@ -23,10 +23,12 @@ export default function Home() {
           <a
             href="https://discord.gg/C7rKt52EFC"
             target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all glow"
           >
             Join Discord
           </a>
+
         </div>
       </nav>
 
@@ -67,6 +69,7 @@ export default function Home() {
             <a
               href="https://discord.gg/C7rKt52EFC"
               target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 rounded-2xl border border-zinc-700 hover:border-cyan-400 hover:bg-white/5 transition-all"
             >
               Join Discord
@@ -140,6 +143,7 @@ export default function Home() {
             <a
               href="https://discord.gg/C7rKt52EFC"
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-block mt-8 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all"
             >
               Open Ticket
