@@ -41,6 +41,10 @@ export default function Home() {
               Boosting
             </Link>
 
+            <Link href="/status">
+              Status
+            </Link>
+
           </div>
 
           <a
@@ -92,14 +96,12 @@ export default function Home() {
               BOOSTING
             </Link>
 
-            <a
-              href="https://discord.gg/C7rKt52EFC"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-10 py-4 rounded-2xl border border-zinc-700 hover:border-cyan-400 hover:bg-white/5 transition-all duration-300"
+            <Link
+              href="/status"
+              className="px-10 py-4 rounded-2xl border border-green-500 text-green-400 hover:bg-green-500/10 transition-all duration-300"
             >
-              JOIN DISCORD
-            </a>
+              SYSTEM STATUS
+            </Link>
 
           </div>
 
