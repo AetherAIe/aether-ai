@@ -5,47 +5,47 @@ import Link from "next/link";
 
 const products = [
   {
-    title: "WARZONE AI",
-    image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop",
+    title: "WARZONE & BO7 AI",
+    image: "/images/warzone.png",
     link: "/product/warzone-ai",
   },
 
   {
     title: "FORTNITE AI",
-    image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/fortnite.png",
     link: "/product/fortnite-ai",
   },
 
   {
     title: "BATTLEFIELD AI",
-    image:
-      "https://images.unsplash.com/photo-1547394765-185e1e68f34e?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/battlefield.png",
     link: "/product/battlefield-ai",
   },
 
   {
     title: "APEX AI",
-    image:
-      "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/apex.png",
     link: "/product/apex-ai",
   },
 
   {
     title: "BOOSTING SERVICE",
-    image:
-      "https://images.unsplash.com/photo-1548686304-89d188a80029?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/warzone.png",
     link: "/boosting",
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-24">
+    <main className="min-h-screen bg-black text-white px-6 py-24 overflow-hidden">
 
-      {/* BACKGROUND */}
+      {/* GRID */}
       <div className="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
+
+      {/* GLOW */}
+      <div className="fixed top-[-200px] left-[-200px] w-[700px] h-[700px] bg-purple-600/20 blur-[180px] rounded-full pointer-events-none" />
+
+      <div className="fixed bottom-[-200px] right-[-200px] w-[700px] h-[700px] bg-cyan-500/10 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -74,8 +74,24 @@ export default function ServicesPage() {
                   {product.title}
                 </h2>
 
-                <p className="text-zinc-400 mt-4 leading-relaxed">
-                  Premium undetected gaming enhancement technology and services.
+                <div className="flex items-center gap-3 mt-5">
+
+                  <div className="relative flex items-center justify-center">
+
+                    <div className="absolute w-4 h-4 rounded-full bg-green-500 animate-ping" />
+
+                    <div className="w-4 h-4 rounded-full bg-green-500 relative z-10" />
+
+                  </div>
+
+                  <span className="text-green-400 font-bold tracking-wider">
+                    LIVE & UNDETECTED
+                  </span>
+
+                </div>
+
+                <p className="text-zinc-400 mt-5 leading-relaxed">
+                  Premium AI-powered enhancement technology with instant delivery.
                 </p>
 
                 <Link
