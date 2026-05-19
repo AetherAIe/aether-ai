@@ -2,39 +2,19 @@
 
 import { motion } from "framer-motion";
 
-const shopItems = [
-  {
-    title: "AI TRACKING",
-    price: "$39",
-    features: [
-      "Undetected",
-      "Humanized Aim",
-      "Controller Support",
-      "24/7 Support",
-    ],
-  },
+const aiPlans = [
+  { title: "6 HOURS", price: "$2.99" },
+  { title: "1 DAY", price: "$9.99" },
+  { title: "1 WEEK", price: "$19.99" },
+  { title: "1 MONTH", price: "$34.99" },
+  { title: "LIFETIME", price: "$129.99" },
+];
 
-  {
-    title: "MP BOOSTING",
-    price: "$49",
-    features: [
-      "Rank Push",
-      "Top Players",
-      "Fast Delivery",
-      "Live Updates",
-    ],
-  },
-
-  {
-    title: "WZ BOOSTING",
-    price: "$69",
-    features: [
-      "SR Boost",
-      "Professional Squad",
-      "Priority Queue",
-      "Instant Support",
-    ],
-  },
+const boostingPlans = [
+  { title: "BRONZE → DIAMOND", price: "$30" },
+  { title: "DIAMOND → CRIM", price: "$40" },
+  { title: "CRIM → IRI", price: "$70" },
+  { title: "BRONZE → IRI", price: "$100" },
 ];
 
 export default function Home() {
@@ -51,9 +31,8 @@ export default function Home() {
 
           <div className="hidden md:flex gap-8 text-sm text-zinc-300">
             <a href="#">Home</a>
-            <a href="#services">Services</a>
-            <a href="#shop">Shop</a>
-            <a href="#reviews">Reviews</a>
+            <a href="#ai">AI</a>
+            <a href="#boosting">Boosting</a>
           </div>
 
           <a
@@ -95,10 +74,10 @@ export default function Home() {
           <div className="flex flex-wrap gap-6 justify-center mt-12">
 
             <a
-              href="#shop"
+              href="#ai"
               className="px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all glow font-semibold"
             >
-              Enter Shop
+              ENTER SHOP
             </a>
 
             <a
@@ -107,7 +86,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-2xl border border-zinc-700 hover:border-cyan-400 hover:bg-white/5 transition-all"
             >
-              Join Discord
+              JOIN DISCORD
             </a>
 
           </div>
@@ -116,57 +95,98 @@ export default function Home() {
 
       </section>
 
-      {/* SHOP */}
+      {/* AI SECTION */}
       <section
-        id="shop"
-        className="max-w-7xl mx-auto px-6 md:px-10 py-32"
+        id="ai"
+        className="max-w-7xl mx-auto px-6 md:px-10 py-24"
       >
 
         <h2 className="text-6xl font-black text-center mb-20 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-          PREMIUM SHOP
+          AI TRACKING
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
 
-          {shopItems.map((item) => (
+          {aiPlans.map((plan) => (
             <motion.div
               whileHover={{ scale: 1.05 }}
-              key={item.title}
-              className="relative bg-zinc-900/70 border border-white/10 rounded-[32px] p-10 backdrop-blur-xl overflow-hidden card-glow transition-all"
+              key={plan.title}
+              className="bg-zinc-900/70 border border-white/10 rounded-[32px] p-8 backdrop-blur-xl card-glow transition-all text-center"
             >
 
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-500/10" />
+              <h3 className="text-2xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                {plan.title}
+              </h3>
 
-              <div className="relative z-10">
-
-                <h3 className="text-3xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  {item.title}
-                </h3>
-
-                <div className="mt-6 text-6xl font-black">
-                  {item.price}
-                </div>
-
-                <ul className="mt-8 space-y-4 text-zinc-300">
-
-                  {item.features.map((feature) => (
-                    <li key={feature}>
-                      ✓ {feature}
-                    </li>
-                  ))}
-
-                </ul>
-
-                <a
-                  href="https://discord.gg/C7rKt52EFC"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-10 w-full text-center py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all font-bold glow"
-                >
-                  BUY NOW
-                </a>
-
+              <div className="mt-6 text-5xl font-black">
+                {plan.price}
               </div>
+
+              <ul className="mt-8 space-y-3 text-zinc-300">
+                <li>✓ Humanized AI</li>
+                <li>✓ Controller Support</li>
+                <li>✓ Premium Config</li>
+                <li>✓ Instant Setup</li>
+              </ul>
+
+              <a
+                href="https://discord.gg/C7rKt52EFC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-8 w-full text-center py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all font-bold glow"
+              >
+                BUY NOW
+              </a>
+
+            </motion.div>
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* BOOSTING */}
+      <section
+        id="boosting"
+        className="max-w-7xl mx-auto px-6 md:px-10 py-24"
+      >
+
+        <h2 className="text-6xl font-black text-center mb-20 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          BOOSTING
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+          {boostingPlans.map((plan) => (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              key={plan.title}
+              className="bg-zinc-900/70 border border-white/10 rounded-[32px] p-8 backdrop-blur-xl card-glow transition-all text-center"
+            >
+
+              <h3 className="text-2xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                {plan.title}
+              </h3>
+
+              <div className="mt-6 text-5xl font-black">
+                {plan.price}
+              </div>
+
+              <ul className="mt-8 space-y-3 text-zinc-300">
+                <li>✓ Top Ranked Players</li>
+                <li>✓ Fast Delivery</li>
+                <li>✓ Secure Process</li>
+                <li>✓ Live Support</li>
+              </ul>
+
+              <a
+                href="https://discord.gg/C7rKt52EFC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-8 w-full text-center py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all font-bold glow"
+              >
+                ORDER NOW
+              </a>
 
             </motion.div>
           ))}
