@@ -1,5 +1,9 @@
 import "./globals.css";
 
+import AIRadar from "@/components/AIRadar";
+import LivePurchases from "@/components/LivePurchases";
+import LiveStats from "@/components/LiveStats";
+
 export const metadata = {
   title: "AetherAI",
   description: "Premium AI Gaming Enhancements",
@@ -12,7 +16,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+
+      <body className="bg-black text-white overflow-x-hidden">
+
+        {/* AI RADAR BACKGROUND */}
+        <AIRadar />
+
+        {/* LIVE PURCHASES */}
+        <LivePurchases />
+
+        {/* LIVE STATS */}
+        <LiveStats />
+
+        {/* WEBSITE */}
+        <div className="relative z-10">
+          {children}
+        </div>
+
+      </body>
+
     </html>
   );
 }

@@ -2,18 +2,22 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import HeroVideo from "@/components/HeroVideo";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden">
+    <main className="relative min-h-screen bg-black text-white overflow-hidden">
+
+      {/* VIDEO BACKGROUND */}
+      <HeroVideo />
 
       {/* GRID */}
-      <div className="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
+      <div className="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none z-[1]" />
 
       {/* GLOW */}
-      <div className="fixed top-[-200px] left-[-200px] w-[700px] h-[700px] bg-purple-600/20 blur-[180px] rounded-full pointer-events-none" />
+      <div className="fixed top-[-200px] left-[-200px] w-[700px] h-[700px] bg-purple-600/20 blur-[180px] rounded-full pointer-events-none z-[1]" />
 
-      <div className="fixed bottom-[-200px] right-[-200px] w-[700px] h-[700px] bg-cyan-500/10 blur-[180px] rounded-full pointer-events-none" />
+      <div className="fixed bottom-[-200px] right-[-200px] w-[700px] h-[700px] bg-cyan-500/10 blur-[180px] rounded-full pointer-events-none z-[1]" />
 
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-white/10 bg-black/40">
@@ -61,7 +65,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen text-center px-6">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-6">
 
         <motion.div
           initial={{ opacity: 0, y: 70 }}
@@ -75,7 +79,7 @@ export default function Home() {
             EVOLVED.
           </h1>
 
-          <p className="mt-8 text-zinc-400 max-w-3xl mx-auto text-lg md:text-2xl leading-relaxed">
+          <p className="mt-8 text-zinc-300 max-w-3xl mx-auto text-lg md:text-2xl leading-relaxed">
             Premium AI-powered gaming enhancement technology,
             ranked boosting and next-generation controller systems.
           </p>
@@ -110,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* FEATURED */}
-      <section className="max-w-7xl mx-auto px-6 pb-32">
+      <section className="relative z-10 max-w-7xl mx-auto px-6 pb-32">
 
         <h2 className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
           FEATURED PRODUCTS
@@ -200,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-10 text-center text-zinc-500">
+      <footer className="relative z-10 border-t border-white/10 py-10 text-center text-zinc-500">
         © 2026 AETHER AI — All Rights Reserved.
       </footer>
 
