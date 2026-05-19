@@ -31,28 +31,34 @@ const reviews = [
 ];
 
 export default function LiveStats() {
-  const [viewers, setViewers] = useState(128);
+  const [viewers, setViewers] = useState(5);
   const [review, setReview] = useState(reviews[0]);
 
   useEffect(() => {
+
     const viewerInterval = setInterval(() => {
-      setViewers((prev) => {
-        const random = Math.floor(Math.random() * 6) - 2;
-        return Math.max(90, prev + random);
-      });
-    }, 4000);
+
+      const random =
+        Math.floor(Math.random() * 6) + 3;
+
+      setViewers(random);
+
+    }, 5000);
 
     const reviewInterval = setInterval(() => {
+
       const randomReview =
         reviews[Math.floor(Math.random() * reviews.length)];
 
       setReview(randomReview);
-    }, 8000);
+
+    }, 10000);
 
     return () => {
       clearInterval(viewerInterval);
       clearInterval(reviewInterval);
     };
+
   }, []);
 
   return (
@@ -62,7 +68,7 @@ export default function LiveStats() {
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        className="fixed top-6 right-6 z-[9999]"
+        className="fixed top-24 right-6 z-[99999]"
       >
 
         <div className="bg-[#0b0b12]/95 backdrop-blur-xl border border-white/10 rounded-2xl px-5 py-4 shadow-[0_0_40px_rgba(168,85,247,0.2)]">
@@ -87,7 +93,7 @@ export default function LiveStats() {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed bottom-6 right-6 z-[9999]"
+        className="fixed bottom-6 right-6 z-[99999]"
       >
 
         <div className="bg-[#0b0b12]/95 backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-5 shadow-[0_0_40px_rgba(34,211,238,0.15)] w-[340px]">

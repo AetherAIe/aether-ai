@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+
 import HeroVideo from "@/components/HeroVideo";
+import ScanCard from "@/components/ScanCard";
 
 export default function Home() {
   return (
@@ -18,51 +20,6 @@ export default function Home() {
       <div className="fixed top-[-200px] left-[-200px] w-[700px] h-[700px] bg-purple-600/20 blur-[180px] rounded-full pointer-events-none z-[1]" />
 
       <div className="fixed bottom-[-200px] right-[-200px] w-[700px] h-[700px] bg-cyan-500/10 blur-[180px] rounded-full pointer-events-none z-[1]" />
-
-      {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-white/10 bg-black/40">
-
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-
-          <Link
-            href="/"
-            className="text-2xl font-black tracking-[0.3em] bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent"
-          >
-            AETHER AI
-          </Link>
-
-          <div className="hidden md:flex gap-8 text-sm text-zinc-300">
-
-            <Link href="/">
-              Home
-            </Link>
-
-            <Link href="/services">
-              Services
-            </Link>
-
-            <Link href="/boosting">
-              Boosting
-            </Link>
-
-            <Link href="/status">
-              Status
-            </Link>
-
-          </div>
-
-          <a
-            href="https://discord.gg/C7rKt52EFC"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(168,85,247,0.6)]"
-          >
-            Join Discord
-          </a>
-
-        </div>
-
-      </nav>
 
       {/* HERO */}
       <section className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-6">
@@ -141,62 +98,62 @@ export default function Home() {
               link: "/boosting",
             },
           ].map((item) => (
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              key={item.title}
-              className="w-[380px] bg-zinc-900/80 border border-white/10 rounded-[36px] overflow-hidden backdrop-blur-xl transition-all duration-300 shadow-[0_0_35px_rgba(168,85,247,0.15)] hover:shadow-[0_0_50px_rgba(34,211,238,0.25)]"
-            >
+            <ScanCard key={item.title}>
 
-              {/* IMAGE */}
-              <div className="relative overflow-hidden">
+              <div className="w-[380px] bg-zinc-900/80 rounded-[36px] overflow-hidden backdrop-blur-xl transition-all duration-300">
 
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-[260px] object-cover hover:scale-105 transition-all duration-500"
-                />
+                {/* IMAGE */}
+                <div className="relative overflow-hidden">
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-[260px] object-cover hover:scale-105 transition-all duration-500"
+                  />
 
-              </div>
-
-              {/* CONTENT */}
-              <div className="p-8">
-
-                <h3 className="text-4xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  {item.title}
-                </h3>
-
-                <div className="flex items-center gap-3 mt-5">
-
-                  <div className="relative flex items-center justify-center">
-
-                    <div className="absolute w-4 h-4 rounded-full bg-green-500 animate-ping" />
-
-                    <div className="w-4 h-4 rounded-full bg-green-500 relative z-10" />
-
-                  </div>
-
-                  <span className="text-green-400 font-bold tracking-wider">
-                    LIVE & UNDETECTED
-                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
                 </div>
 
-                <p className="mt-5 text-zinc-400 leading-relaxed">
-                  Premium next-generation gaming enhancement systems.
-                </p>
+                {/* CONTENT */}
+                <div className="p-8">
 
-                <Link
-                  href={item.link}
-                  className="inline-block mt-8 w-full text-center py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all duration-300 font-bold shadow-[0_0_35px_rgba(168,85,247,0.5)]"
-                >
-                  VIEW PRODUCT
-                </Link>
+                  <h3 className="text-4xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                    {item.title}
+                  </h3>
+
+                  <div className="flex items-center gap-3 mt-5">
+
+                    <div className="relative flex items-center justify-center">
+
+                      <div className="absolute w-4 h-4 rounded-full bg-green-500 animate-ping" />
+
+                      <div className="w-4 h-4 rounded-full bg-green-500 relative z-10" />
+
+                    </div>
+
+                    <span className="text-green-400 font-bold tracking-wider">
+                      LIVE & UNDETECTED
+                    </span>
+
+                  </div>
+
+                  <p className="mt-5 text-zinc-400 leading-relaxed">
+                    Premium next-generation gaming enhancement systems.
+                  </p>
+
+                  <Link
+                    href={item.link}
+                    className="inline-block mt-8 w-full text-center py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all duration-300 font-bold shadow-[0_0_35px_rgba(168,85,247,0.5)]"
+                  >
+                    VIEW PRODUCT
+                  </Link>
+
+                </div>
 
               </div>
 
-            </motion.div>
+            </ScanCard>
           ))}
 
         </div>
