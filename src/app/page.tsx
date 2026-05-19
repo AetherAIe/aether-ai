@@ -17,6 +17,7 @@ export default function Home() {
           <div className="hidden md:flex gap-8 text-sm text-zinc-300">
             <a href="#">Home</a>
             <a href="#services">Services</a>
+            <a href="#shop">Shop</a>
             <a href="#reviews">Reviews</a>
           </div>
 
@@ -35,7 +36,6 @@ export default function Home() {
       {/* HERO */}
       <section className="relative flex flex-col items-center justify-center h-screen text-center px-6 overflow-hidden">
 
-        {/* BACKGROUND GLOWS */}
         <div className="absolute w-[700px] h-[700px] bg-purple-700/20 blur-[180px] rounded-full top-[-150px] left-[-150px]" />
 
         <div className="absolute w-[500px] h-[500px] bg-cyan-500/10 blur-[150px] rounded-full bottom-[-100px] right-[-100px]" />
@@ -60,10 +60,10 @@ export default function Home() {
           <div className="flex flex-wrap gap-6 justify-center mt-12">
 
             <a
-              href="#services"
+              href="#shop"
               className="px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all glow font-semibold"
             >
-              View Services
+              Enter Shop
             </a>
 
             <a
@@ -81,35 +81,10 @@ export default function Home() {
 
       </section>
 
-      {/* STATS */}
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-6 px-6 md:px-10 pb-24 max-w-7xl mx-auto">
-
-        {[
-          ["98%", "Success Rate"],
-          ["5000+", "Happy Users"],
-          ["24/7", "Support"],
-          ["100%", "Secure"],
-        ].map(([title, desc]) => (
-          <div
-            key={title}
-            className="bg-zinc-900/70 border border-white/10 rounded-3xl p-8 text-center backdrop-blur-xl card-glow transition-all"
-          >
-            <h2 className="text-4xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              {title}
-            </h2>
-
-            <p className="text-zinc-400 mt-3">
-              {desc}
-            </p>
-          </div>
-        ))}
-
-      </section>
-
       {/* SERVICES */}
       <section
         id="services"
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-10 pb-32 max-w-7xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-10 pb-24 max-w-7xl mx-auto"
       >
 
         {[
@@ -140,17 +115,98 @@ export default function Home() {
               {desc}
             </p>
 
-            <a
-              href="https://discord.gg/C7rKt52EFC"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-8 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all"
-            >
-              Open Ticket
-            </a>
-
           </motion.div>
         ))}
+
+      </section>
+
+      {/* SHOP */}
+      <section
+        id="shop"
+        className="max-w-7xl mx-auto px-6 md:px-10 py-32"
+      >
+
+        <h2 className="text-6xl font-black text-center mb-20 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          PREMIUM SHOP
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          {[
+            [
+              "AI TRACKING",
+              "$39",
+              [
+                "Undetected",
+                "Humanized Aim",
+                "Controller Support",
+                "24/7 Support",
+              ],
+            ],
+
+            [
+              "MP BOOSTING",
+              "$49",
+              [
+                "Rank Push",
+                "Top Players",
+                "Fast Delivery",
+                "Live Updates",
+              ],
+            ],
+
+            [
+              "WZ BOOSTING",
+              "$69",
+              [
+                "SR Boost",
+                "Professional Squad",
+                "Priority Queue",
+                "Instant Support",
+              ],
+            ],
+          ].map(([title, price, features]) => (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              key={title}
+              className="relative bg-zinc-900/70 border border-white/10 rounded-[32px] p-10 backdrop-blur-xl overflow-hidden card-glow transition-all"
+            >
+
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-cyan-500/10" />
+
+              <div className="relative z-10">
+
+                <h3 className="text-3xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                  {title}
+                </h3>
+
+                <div className="mt-6 text-6xl font-black">
+                  {price}
+                </div>
+
+                <ul className="mt-8 space-y-4 text-zinc-300">
+                  {(features as string[]).map((feature) => (
+                    <li key={feature}>
+                      ✓ {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="https://discord.gg/C7rKt52EFC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-10 w-full text-center py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all font-bold glow"
+                >
+                  BUY NOW
+                </a>
+
+              </div>
+
+            </motion.div>
+          ))}
+
+        </div>
 
       </section>
 
