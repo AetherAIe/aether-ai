@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import AIRadar from "@/components/AIRadar";
+import Navbar from "@/components/Navbar";
 import LivePurchases from "@/components/LivePurchases";
 import LiveStats from "@/components/LiveStats";
 
@@ -19,8 +20,11 @@ export default function RootLayout({
 
       <body className="bg-black text-white overflow-x-hidden">
 
-        {/* AI RADAR BACKGROUND */}
+        {/* AI RADAR */}
         <AIRadar />
+
+        {/* NAVBAR */}
+        <Navbar />
 
         {/* LIVE PURCHASES */}
         <LivePurchases />
@@ -29,7 +33,7 @@ export default function RootLayout({
         <LiveStats />
 
         {/* WEBSITE */}
-        <div className="relative z-10">
+        <div className="relative z-10 pt-32">
           {children}
         </div>
 
