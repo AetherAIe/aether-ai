@@ -21,7 +21,7 @@ export default function Home() {
           </div>
 
           <a
-            href="https://discord.gg/Qj6w6wbGvV"
+            href="https://discord.gg/Qj6w6wbGvVQeXL0l-MN6jV4-YT215f-3m94qp-bJrmfh-I7jp5R"
             className="px-5 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition-all glow"
           >
             Join Discord
@@ -64,7 +64,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://discord.gg/Qj6w6wbGvV"
+              href="https://discord.gg/Qj6w6wbGvVQeXL0l-MN6jV4-YT215f-3m94qp-bJrmfh-I7jp5R"
               className="px-8 py-4 rounded-2xl border border-zinc-700 hover:border-cyan-400 hover:bg-white/5 transition-all"
             >
               Join Discord
