@@ -121,22 +121,19 @@ export default function Home() {
           {[
             {
               title: "WARZONE & BO7 AI",
-              image:
-                "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop",
+              image: "/images/warzone.png",
               link: "/product/warzone-ai",
             },
 
             {
               title: "FORTNITE AI",
-              image:
-                "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop",
+              image: "/images/fortnite.png",
               link: "/product/fortnite-ai",
             },
 
             {
               title: "BOOSTING SERVICE",
-              image:
-                "https://images.unsplash.com/photo-1548686304-89d188a80029?q=80&w=1200&auto=format&fit=crop",
+              image: "/images/boosting-service.png",
               link: "/boosting",
             },
           ].map((item) => (
@@ -146,19 +143,43 @@ export default function Home() {
               className="w-[380px] bg-zinc-900/80 border border-white/10 rounded-[36px] overflow-hidden backdrop-blur-xl transition-all duration-300 shadow-[0_0_35px_rgba(168,85,247,0.15)] hover:shadow-[0_0_50px_rgba(34,211,238,0.25)]"
             >
 
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-[260px] object-cover"
-              />
+              {/* IMAGE */}
+              <div className="relative overflow-hidden">
 
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-[260px] object-cover hover:scale-105 transition-all duration-500"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+
+              </div>
+
+              {/* CONTENT */}
               <div className="p-8">
 
                 <h3 className="text-4xl font-black bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-zinc-400 leading-relaxed">
+                <div className="flex items-center gap-3 mt-5">
+
+                  <div className="relative flex items-center justify-center">
+
+                    <div className="absolute w-4 h-4 rounded-full bg-green-500 animate-ping" />
+
+                    <div className="w-4 h-4 rounded-full bg-green-500 relative z-10" />
+
+                  </div>
+
+                  <span className="text-green-400 font-bold tracking-wider">
+                    LIVE & UNDETECTED
+                  </span>
+
+                </div>
+
+                <p className="mt-5 text-zinc-400 leading-relaxed">
                   Premium next-generation gaming enhancement systems.
                 </p>
 
